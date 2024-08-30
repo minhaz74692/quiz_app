@@ -1,9 +1,9 @@
 // ignore_for_file: use_build_context_synchronously, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:quiz_app/constants.dart';
-import 'package:quiz_app/home_screen.dart';
-import 'package:quiz_app/navigator.dart';
+import 'package:quiz_app/constants/constants.dart';
+import 'package:quiz_app/screens/home_screen.dart';
+import 'package:quiz_app/utils/navigator.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -43,9 +43,9 @@ class _SplashScreenState extends State<SplashScreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50),
                 child: Image.asset(
-                  Constants.splashIcon,
-                  height: 300,
-                  width: 300,
+                  Constants.appIcon,
+                  height: 200,
+                  width: 200,
                 ),
               ),
             ),
@@ -59,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigate() async {
-    Future.delayed(const Duration(milliseconds: 2000)).then((value) async {
+    Future.delayed(const Duration(milliseconds: 1500)).then((value) async {
       NavigatorHelper.nextScreenCloseOthers(context, HomeScreen());
     });
   }

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/blocs/quiz_bloc.dart';
-import 'package:quiz_app/splash_screen.dart';
+import 'package:quiz_app/screens/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({
