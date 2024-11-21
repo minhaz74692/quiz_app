@@ -12,6 +12,7 @@ Quiz App is a Flutter-based application that allows users to take quizzes on var
 - **State Management:** The app uses Provider for efficient and scalable state management.
 - **HTTP Requests:** Data is fetched from a remote server using Dio for fast and reliable HTTP requests.
 - **Responsive Design:** The app is designed to work on both Android and iOS devices with responsive layouts.
+- **Followed Clean Architecture
 
 ## Usage
 
