@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quiz_app/core/features/quiz/presentation/controllers/quiz_controller.dart';
+import 'package:quiz_app/features/quiz/presentation/controllers/quiz_controller.dart';
 
 class QuestionBox extends StatelessWidget {
   const QuestionBox({

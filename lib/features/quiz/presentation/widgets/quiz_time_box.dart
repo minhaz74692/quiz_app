@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/constants/constants.dart';
-import 'package:quiz_app/core/features/quiz/presentation/controllers/quiz_controller.dart';
+import 'package:quiz_app/features/quiz/presentation/controllers/quiz_controller.dart';
+
 class QuizTimeBox extends StatelessWidget {
   const QuizTimeBox({
     super.key,
@@ -68,4 +69,3 @@ class QuizTimeBox extends StatelessWidget {
     );
   }
 }
-

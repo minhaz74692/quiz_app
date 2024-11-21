@@ -1,5 +1,5 @@
-import 'package:quiz_app/core/features/quiz/domain/entities/quiz.dart';
+import 'package:quiz_app/features/quiz/domain/entities/quiz.dart';
 
-abstract class QuizRepository{
+abstract class QuizRepository {
   Future<List<Quiz>?> getQuizes();
 }

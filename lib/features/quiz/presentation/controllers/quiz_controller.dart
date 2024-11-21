@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_final_fields
 
 import 'package:flutter/material.dart';
-import 'package:quiz_app/core/features/quiz/domain/entities/quiz.dart';
-import 'package:quiz_app/core/features/quiz/domain/usecases/quiz_usecase.dart';
+import 'package:quiz_app/features/quiz/domain/entities/quiz.dart';
+import 'package:quiz_app/features/quiz/domain/usecases/quiz_usecase.dart';
 
 class QuizProvider extends ChangeNotifier {
   final QuizUsecase quizUsecase;

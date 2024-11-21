@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:quiz_app/core/features/quiz/domain/entities/quiz.dart';
+import 'package:quiz_app/features/quiz/domain/entities/quiz.dart';
 
 QuizModel QuizModelFromJson(String str) => QuizModel.fromJson(json.decode(str));
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quiz_app/core/features/quiz/presentation/controllers/quiz_controller.dart';
+import 'package:quiz_app/features/quiz/presentation/controllers/quiz_controller.dart';
 import 'package:quiz_app/utils/navigator.dart';
 import 'package:quiz_app/utils/reusaable_button.dart';
-import 'package:quiz_app/core/features/quiz/presentation/pages/quiz_screen.dart';
+import 'package:quiz_app/features/quiz/presentation/pages/quiz_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constants/constants.dart';
-import 'package:quiz_app/core/features/quiz/data/models/quiz_model.dart';
+import 'package:quiz_app/features/quiz/data/models/quiz_model.dart';
 
 class QuizServices {
   Future<List<QuizModel>?> getQuizService() async {
