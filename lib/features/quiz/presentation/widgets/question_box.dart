@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quiz_app/blocs/quiz_bloc.dart';
+import 'package:quiz_app/core/features/quiz/presentation/controllers/quiz_controller.dart';
 
 class QuestionBox extends StatelessWidget {
   const QuestionBox({
@@ -12,16 +12,16 @@ class QuestionBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var qb = context.watch<QuizBloc>();
+    var qb = context.watch<QuizProvider>();
     List<String> questions =
-        qb.questionList[qb.activeQuiz - 1].incorrectAnswers!;
+        qb.questionList[qb.activeQuiz - 1].incorrectAnswers;
     return Padding(
       padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            qb.questionList[qb.activeQuiz - 1].question!,
+            qb.questionList[qb.activeQuiz - 1].question,
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
@@ -40,7 +40,7 @@ class QuestionBox extends StatelessWidget {
                 onTap: () async {
                   await qb.setClickedIndex(index);
                   if (questions[qb.clickedIndex] ==
-                      qb.questionList[qb.activeQuiz - 1].correctAnswer!) {
+                      qb.questionList[qb.activeQuiz - 1].correctAnswer) {
                     qb.increasePoint();
                   }
                 },
@@ -57,7 +57,7 @@ class QuestionBox extends StatelessWidget {
                           color: index == qb.clickedIndex
                               ? questions[index] ==
                                       qb.questionList[qb.clickedIndex]
-                                          .correctAnswer!
+                                          .correctAnswer
                                   ? Colors.green
                                   : Colors.red
                               : Colors.grey,

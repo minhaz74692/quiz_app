@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quiz_app/blocs/quiz_bloc.dart';
 import 'package:quiz_app/constants/constants.dart';
+import 'package:quiz_app/core/features/quiz/presentation/controllers/quiz_controller.dart';
 class QuizTimeBox extends StatelessWidget {
   const QuizTimeBox({
     super.key,
@@ -11,7 +11,7 @@ class QuizTimeBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    QuizBloc qb = context.watch<QuizBloc>();
+    QuizProvider quizProvider = context.watch<QuizProvider>();
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -31,7 +31,7 @@ class QuizTimeBox extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Quiz ${qb.activeQuiz} (Single Choose)",
+                  "Quiz ${quizProvider.activeQuiz} (Single Choose)",
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -51,11 +51,11 @@ class QuizTimeBox extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Question ${qb.activeQuiz} of ${qb.questionList.length}",
+                  "Question ${quizProvider.activeQuiz} of ${quizProvider.questionList.length}",
                 ),
                 Spacer(),
                 Text(
-                  "Point: ${qb.point}",
+                  "Point: ${quizProvider.point}",
                   style: TextStyle(
                     color: Constants.buttonColor,
                   ),

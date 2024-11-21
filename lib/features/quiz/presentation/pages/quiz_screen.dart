@@ -2,18 +2,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quiz_app/blocs/quiz_bloc.dart';
-import 'package:quiz_app/widgets/question_box.dart';
-import 'package:quiz_app/widgets/quiz_time_box.dart';
-import 'package:quiz_app/widgets/quiz_topbar.dart';
-import 'package:quiz_app/widgets/reusaable_button.dart';
+import 'package:quiz_app/core/features/quiz/presentation/controllers/quiz_controller.dart';
+import 'package:quiz_app/core/features/quiz/presentation/widgets/question_box.dart';
+import 'package:quiz_app/core/features/quiz/presentation/widgets/quiz_time_box.dart';
+import 'package:quiz_app/core/features/quiz/presentation/widgets/quiz_topbar.dart';
+import 'package:quiz_app/utils/reusaable_button.dart';
 
 class QuizScreen extends StatelessWidget {
   const QuizScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    QuizBloc qb = context.watch<QuizBloc>();
+    QuizProvider qb = context.watch<QuizProvider>();
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(

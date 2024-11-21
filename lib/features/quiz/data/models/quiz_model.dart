@@ -1,11 +1,12 @@
 import 'dart:convert';
 
-QuestionModel questionModelFromJson(String str) =>
-    QuestionModel.fromJson(json.decode(str));
+import 'package:quiz_app/core/features/quiz/domain/entities/quiz.dart';
 
-String questionModelToJson(QuestionModel data) => json.encode(data.toJson());
+QuizModel QuizModelFromJson(String str) => QuizModel.fromJson(json.decode(str));
 
-class QuestionModel {
+String QuizModelToJson(QuizModel data) => json.encode(data.toJson());
+
+class QuizModel {
   String? type;
   String? difficulty;
   String? category;
@@ -13,7 +14,7 @@ class QuestionModel {
   String? correctAnswer;
   List<String>? incorrectAnswers;
 
-  QuestionModel({
+  QuizModel({
     this.type,
     this.difficulty,
     this.category,
@@ -22,7 +23,7 @@ class QuestionModel {
     this.incorrectAnswers,
   });
 
-  factory QuestionModel.fromJson(Map<String, dynamic> json) => QuestionModel(
+  factory QuizModel.fromJson(Map<String, dynamic> json) => QuizModel(
         type: json["type"],
         difficulty: json["difficulty"],
         category: json["category"],
@@ -41,4 +42,16 @@ class QuestionModel {
         "incorrect_answers":
             List<dynamic>.from(incorrectAnswers!.map((x) => x)),
       };
+
+  // Convert Model to Entity
+  Quiz toEntity() {
+    return Quiz(
+      type: type ?? '',
+      difficulty: difficulty ?? '',
+      category: category ?? '',
+      question: question ?? '',
+      correctAnswer: correctAnswer ?? '',
+      incorrectAnswers: incorrectAnswers ?? [],
+    );
+  }
 }
